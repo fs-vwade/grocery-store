@@ -16,7 +16,7 @@
 function logNames(items) {
 	// TODO: use `forEach`
 	items.forEach((item) => {
-		console.log(item);
+		console.log(item.name);
 	});
 }
 
@@ -27,7 +27,7 @@ function logNames(items) {
 function getUppercaseNames(items) {
 	// TODO: use `map`
 	return items.map((item) => {
-		return new String(item).toUpperCase();
+		return item.name.toUpperCase();
 	});
 }
 
@@ -65,7 +65,7 @@ function getItemPriceByName(items, name) {
 function getItemsByCategory(items, category) {
 	// TODO: use `filter`
 	return items.filter((item) => {
-		return item == category;
+		return item.category === category;
 	});
 }
 
@@ -89,7 +89,7 @@ function calculateTotalPrice(items) {
 
 	return items
 		.map((item) => {
-			return item.price;
+			return item.price * item.quantity;
 		})
 		.reduce((total_cost, cost) => {
 			return total_cost + cost;
